@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { Container, Form, Card, Button } from 'react-bootstrap';
-import CenteredContainer from '../commonlyused/CenteredContainer';
+import CenteredContainer from '../../commonlyuse/CenteredContainer';
 import { v4 as uuidV4 } from 'uuid'
 
 export default function Login({ onIdSubmit }) {
@@ -30,8 +30,8 @@ export default function Login({ onIdSubmit }) {
                      {/* <Form.Group>
                         <Form.Label>Password:</Form.Label>
                         <Form.Control type="password" ref={passwordRef} required />
-                     </Form.Group> */}
-                     <Button className="w-100 mt-2" type="submit">Log in</Button>
+                     </Form.Group>
+                     <Button className="w-100 mt-2" type="submit">Log in</Button>*/}
                      <Button className="w-100 mt-2" type="submit" onClick={CreateNewID} variant="secondary">Create a new ID</Button>
                   </Form>
                </Card.Body>

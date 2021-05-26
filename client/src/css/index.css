@@ -37,3 +37,8 @@
 .h-300px {
    max-height: 250px;
 }
+
+.form-control:focus {
+   outline: none;
+   box-shadow: none;
+}

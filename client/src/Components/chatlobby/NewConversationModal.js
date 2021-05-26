@@ -10,8 +10,9 @@ export default function NewConversationModal({ closeModal }) {
 
    function handleSubmit(e) {
       e.preventDefault();
-
-      createConversation(selectedContactIds);
+      if (selectedContactIds) {
+         createConversation(selectedContactIds);
+      }
       closeModal();
    }
 
@@ -36,8 +37,8 @@ export default function NewConversationModal({ closeModal }) {
          <Modal.Body>
             <div className="d-flex flex-column h-300px overflow-auto custom-scrollbar">
                {
-                  contacts.map((contact) => (
-                     <Form.Group controlId={contact.id} key={contact.id}>
+                  contacts.map((contact, index) => (
+                     <Form.Group controlId={contact.id} key={index}>
                         <Form.Check
                            type="checkbox"
                            value={selectedContactIds.includes(contact.id)}

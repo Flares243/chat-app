@@ -1,6 +1,7 @@
+import React from 'react'
 import SideBar from './SideBar.js'
 import { useConversation } from '../../contexts/ConversationContext'
-import ChatRoom from './ChatRoom.js';
+import ChatRoom from './ChatRoom.js'
 
 export default function Dashboard({ id }) {
    const { selectedConversation } = useConversation();

@@ -4,15 +4,18 @@ import Dashboard from './chatlobby/Dashboard.js'
 import useLocalStorage from '../hooks/useLocalStorage.js'
 import { ContactsProvider } from '../contexts/ContactContext'
 import { ConversationsProvider } from '../contexts/ConversationContext.js'
+import { SocketProvider } from '../contexts/SocketContext.js'
 
 export default function App() {
    const [id, setId] = useLocalStorage('id');
    
    const dashboard = (
       <ContactsProvider>
-         <ConversationsProvider id={id}>
-            <Dashboard id={id} />
-         </ConversationsProvider>
+         <SocketProvider id={id}>
+            <ConversationsProvider id={id}>
+               <Dashboard id={id} />
+            </ConversationsProvider>
+         </SocketProvider>
       </ContactsProvider>
    )
 
